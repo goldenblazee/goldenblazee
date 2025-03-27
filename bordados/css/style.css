@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background: linear-gradient(135deg, #39AEA9, #A2D5AB);
+}
+
+body {
+  font-family: Montserrat, Arial, Verdana;
+}
+
+#msform {
+  width: 400px;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+}
+.msform{
+  width: 330px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  background: white;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px; 
+}
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+#msform input, #msform textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-family: Montserrat;
+  font-size: 14px;
+}
+/* Estilos para el contenedor de consulta */
+#consulta-container, .etiquetaDinamica {
+  background: white;
+  border: 0 none;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  width: 330px;
+  margin: 0 auto;
+  position: relative;    
+  margin: 20px auto;
+  text-align: center;
+    }
+
+    #consulta-container input {
+      padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-family: Montserrat;
+  font-size: 14px;
+    }
+
+    #consulta-container .action-button {
+      width: 120px;
+  background: #27AE60;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+#msform .action-button {
+  width: 120px;
+  background: #27AE60;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+#msform .action-button:hover {
+  background: #219150;
+}
+
+.fs-title {
+  font-size: 18px;
+  color: #2C3E50;
+  margin-bottom: 10px;
+}
+
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+#progressbar {
+  counter-reset: step; /* Necesitas inicializar el contador */
+  padding: 0;
+  margin: 0;
+  overflow: hidden; /* Para contener los elementos flotantes */
+}
+
+#progressbar li {
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  width: 20%; /* Ajustado para mejor distribución (5 pasos) */
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: white;
+  border-radius: 50%; /* Cambiado a círculo para mejor apariencia */
+  margin: 0 auto 5px auto;
+}
+
+#progressbar li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: white;
+  top: 10px;
+  left: -50%;
+  z-index: -1;
+}
+
+#progressbar li:first-child:after {
+  content: none; /* Elimina la línea antes del primer elemento */
+}
+
+#progressbar li.active:before, 
+#progressbar li.active:after {
+  background: #27AE60;
+  color: white;
+}
+
+#progressbar li.active {
+  color: #27AE60;
+  font-weight: bold;
+}
